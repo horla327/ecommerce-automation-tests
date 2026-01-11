@@ -69,7 +69,7 @@ test('Test Case 14: Place Order: Register while Checkout', async ({ page }) => {
     await page.getByRole('link', { name: 'Register / Login' }).click();
     const register = new Register(page);
     await register.userRegistration('Olamide', 'amidat24@gmail.com', 'Ola@123', '10', '4', '2001', 'Olamide', 'Bello', 'Arsenal FC', '17 Belarus','Canada', 'Ontario', 'Maryland', '122987', '56793422')
-    await page.getByRole('link', { name: 'Cart' }).click()
+    await page.getByRole('link', { name: 'Cart' }).click();
     await page.getByText('Proceed To Checkout').click();
     await expect(page.getByRole('heading', { name: 'Your delivery address' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Your billing address' })).toBeVisible();
@@ -185,7 +185,7 @@ test('Test Case 12: Add Products in Cart', async ({ authenticatedPage }) => {
   test('Test Case 13: Verify product quantity in cart', async ({ authenticatedPage }) => {
     await authenticatedPage.getByRole('link', { name: 'Products' }).first().click();
     const products = authenticatedPage.locator('.features_items');
-    await authenticatedPage.getByRole('link', { name: 'View Product' }).first().click()
+    await authenticatedPage.getByRole('link', { name: 'View Product' }).first().click();
     await authenticatedPage.locator('#quantity').fill('4');
     await authenticatedPage.getByRole('button', { name: 'Add to cart' }).click();
     await authenticatedPage.getByRole('link', { name: 'View Cart' }).click();

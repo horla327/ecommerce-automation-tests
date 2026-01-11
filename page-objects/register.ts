@@ -32,7 +32,6 @@ export class Register {
         await this.page.getByRole('button', { name: 'Create Account' }).click();
         await this.page.getByRole('link', { name: 'Continue' }).click();
 
-
     }
 }
 
